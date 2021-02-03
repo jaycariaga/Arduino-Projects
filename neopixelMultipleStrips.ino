@@ -20,7 +20,6 @@
 // Declare our NeoPixel strip object:
 const int ledstrips = 2; //existing led strips
 const int pixelPin[ledstrips] = {6,7};
-byte dostrip = 0;
 Adafruit_NeoPixel strip[ledstrips];
 
 //Adafruit_NeoPixel stripa(LED_COUNT, LED_PINa, NEO_GRBW + NEO_KHZ800);
@@ -81,13 +80,12 @@ void loop() {
    }
    peakToPeak = signalMax - signalMin;  // max - min = peak-peak amplitude
    double volts = (peakToPeak * 5.0) / 1024;  // convert to volts
-   Serial.println(round(100*volts));
 
   for ( int i = 0; i < ledstrips; i++ ){
        strip[i].setBrightness(round(100*volts));
   }
   
-  colorWipe(0,strip[0].Color(  255, 255,   0)     , sampleWindow/1000); // Green
+  colorWipe(0,strip[0].Color(  0, 255,   0)     , sampleWindow/1000); // Green
   colorWipe(1,strip[1].Color(  255, 0,   0)     , sampleWindow/1000); // Green
   
   //colorWipe(strip.Color(  0,   0, 255)     , 50); // Blue
