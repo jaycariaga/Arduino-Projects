@@ -82,10 +82,10 @@ void loop() {
    double volts = (peakToPeak * 5.0) / 1024;  // convert to volts
 
   for ( int i = 0; i < ledstrips; i++ ){
-       strip[i].setBrightness(round(100*volts));
+       strip[i].setBrightness(round(75*volts));
   }
   
-  colorWipe(0,strip[0].Color(  0, 255,   0)     , sampleWindow/1000); // Green
+  colorWipe(0,strip[0].Color(  0, 0,   255)     , sampleWindow/1000); // Green
   colorWipe(1,strip[1].Color(  255, 0,   0)     , sampleWindow/1000); // Green
   
   //colorWipe(strip.Color(  0,   0, 255)     , 50); // Blue
