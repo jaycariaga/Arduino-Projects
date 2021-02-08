@@ -7,7 +7,7 @@
 // need to define DATA_PIN. 
 #define DATA_PIN 6
 #define minima .11
-#define slowness 2
+#define slowness 1
 static int huecount = 0;
 //from soundlvl - senses amplitude of sound received
 const int sampleWindow = 40; // Sample window width in mS (50 mS = 20Hz)
@@ -32,7 +32,7 @@ void loop() {
    unsigned long startMillis= millis();  // Start of sample window
    unsigned int peakToPeak = 0;   // peak-to-peak level
 
-   unsigned int signalMax = 100; //make this higher to decrease sensitivity
+   unsigned int signalMax = 25; //make this higher to decrease sensitivity
    unsigned int signalMin = 1024;
 
    // collect data for 20 mS
